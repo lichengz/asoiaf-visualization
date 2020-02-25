@@ -1,0 +1,38 @@
+{
+   "scenes": [
+      {
+         "sceneStart": "0:00:40",
+         "sceneEnd": "0:01:45",
+         "location": "The Wall",
+         "subLocation": "Castle Black",
+         "characters": [
+            {
+               "name": "Gared"
+            },
+            {
+               "name": "Waymar Royce"
+            },
+            {
+               "name": "Will"
+            }
+         ]
+      },
+      {
+         "sceneStart": "0:01:45",
+         "sceneEnd": "0:03:24",
+         "location": "North of the Wall",
+         "subLocation": "The Haunted Forest",
+         "characters": [
+            {
+               "name": "Gared"
+            },
+            {
+               "name": "Waymar Royce"
+            },
+            {
+               "name": "Will"
+            }
+         ]
+      }
+   ]
+}
