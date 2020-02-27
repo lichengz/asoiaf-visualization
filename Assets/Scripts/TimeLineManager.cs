@@ -10,8 +10,10 @@ public class TimeLineManager : MonoBehaviour
     public Text expisodeCounter;
     public Slider slider;
     public TimeLineScritableObject timeLineAsset;
+    public MapScriptableObject mapAsset;
     public List<int>[] seasons = new List<int>[8];
     EpisodesCollection episodesCollection;
+    HashSet<string> set = new HashSet<string>();
 
     void Start()
     {
@@ -106,9 +108,31 @@ public class TimeLineManager : MonoBehaviour
 
     private void UpdateTimeLineAsset(EpisodesCollection episodesCollection)
     {
+        mapAsset.mapNames.Clear();
+        foreach (Episode epi in episodesCollection.episodes){
+            foreach (Scene scene in epi.scenes)
+            {
+                string location = (scene.subLocation != "" && scene.subLocation != null) ? scene.location + "_" +scene.subLocation : scene.location;
+                if (!set.Contains(location))
+                {
+                    set.Add(location);
+                    mapAsset.mapNames.Add(location);
+                }
+            }
+        }
         if (timeLineAsset.fileLoaded) return;
         foreach (Episode epi in episodesCollection.episodes)
         {
+            foreach (Scene scene in epi.scenes)
+            {
+                string location = (scene.subLocation != "" && scene.subLocation != null) ? scene.location + "_" +scene.subLocation : scene.location;
+                if (!set.Contains(location))
+                {
+                    set.Add(location);
+                    mapAsset.mapNames.Add(location);
+                }
+            }
+
             timeLineAsset.totalNumOfScenes += epi.scenes.Length;
             timeLineAsset.scenesInEachEpisode.Add(epi.scenes.Length);
             if (epi.seasonNum == 1)

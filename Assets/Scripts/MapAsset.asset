@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5245ca3c5ebb5041a6cbc577fd3e4c5, type: 3}
+  m_Name: MapAsset
+  m_EditorClassIdentifier: 
+  mapNames:
+  - Castle Black
+  - The Haunted Forest
+  - Winterfell
+  - Outside Winterfell
+  - King's Landing
+  - Pentos
+  - The Dothraki Sea
+  - The Kingsroad South to King's Landing
+  - Dothraki Camp
+  - North to the Wall
+  - The Gift
+  - Crossroads Inn
+  - Vaes Dothrak
+  - Eastern Road
+  - The Eyrie
+  - The Wolfswood
+  - The Kingswood
+  - Lannister Camp
+  - To the Westerlands
+  - Lhazareen Village
+  - The Neck
+  - The Twins
+  - The Desert
+  - The Red Waste
+  - Battlefield
+  - Riverrun
+  - Camp of the North
+  - Craster's Keep
+  - Dragonstone
+  - The Kingsroad
+  - The Sunset Sea
+  - Lordsport
+  - Pyke
+  - Storm's End
+  - Oxcross
+  - Harrenhal
+  - Qarth
+  - Fist of the First Men
+  - The Woods
+  - Frostfang Mountains
+  - To King's Landing
+  - Blackwater Bay
+  - East to King's Landing
+  - Outside Harrenhal
+  - The Wall
+  - The Summer Sea
+  - Slaver's Bay
+  - Astapor
+  - The Dreadfort
+  - To Riverrun
+  - Wildlings March South
+  - Nightswatch March South
+  - North to the Red Fork
+  - To Harrenhal
+  - Hollow Hill
+  - Wildling Camp
+  - Cave Outside Wildling Camp
+  - Outside Yunkai
+  - South to the Wall
+  - Top of the Wall
+  - South to King's Landing
+  - Red Fork
+  - Destroyed Cabin
+  - Near Nightfort
+  - To The Twins
+  - Yunkai
+  - Nightfort
+  - Away from the Twins
+  - Outside Meereen
+  - To The Eyrie
+  - Mole's Town
+  - Meereen
+  - To The Vale
+  - The Lands of Always Winter
+  - Braavos
+  - Moat Cailin
+  - Outside Castle Black
+  - Outside the Three-Eyed Raven
+  - The Three-Eyed Raven
+  - Coast of the Vale
+  - Outside Casterly Rock
+  - Runestone
+  - Inn
+  - Outside the Inn
+  - Castle Stokeworth
+  - The Water Gardens
+  - Pentos to Volantis
+  - Volantis
+  - Tarth
+  - Dorne
+  - Volantis to Valyria
+  - Winter Town
+  - Valyria
+  - Outside King's Landing
+  - Stannis Baratheon's Camp
+  - Hardhome
+  - To Horn Hill
+  - Tower of Joy
+  - Horn Hill
+  - Village
+  - Bear Island
+  - Deepwood Motte
+  - Forest
+  - Oldtown
+  - The Narrow Sea
+  - Casterly Rock
+  - Highgarden
+  - Blackwater Rush
+  - Eastwatch
+  - The Shivering Sea
+  - Last Hearth
+  mapGameObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
