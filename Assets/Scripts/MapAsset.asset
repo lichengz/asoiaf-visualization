@@ -13,118 +13,134 @@ MonoBehaviour:
   m_Name: MapAsset
   m_EditorClassIdentifier: 
   mapNames:
-  - Castle Black
-  - The Haunted Forest
-  - Winterfell
-  - Outside Winterfell
-  - King's Landing
+  - The Wall_Castle Black
+  - North of the Wall_The Haunted Forest
+  - The North_Winterfell
+  - The North_Outside Winterfell
+  - The Crownlands_King's Landing
   - Pentos
   - The Dothraki Sea
-  - The Kingsroad South to King's Landing
-  - Dothraki Camp
-  - North to the Wall
-  - The Gift
-  - Crossroads Inn
+  - The North_The Kingsroad South to King's Landing
+  - The Dothraki Sea_Dothraki Camp
+  - The North_North to the Wall
+  - The Wall_The Gift
+  - The Riverlands_Crossroads Inn
   - Vaes Dothrak
-  - Eastern Road
-  - The Eyrie
-  - The Wolfswood
-  - The Kingswood
-  - Lannister Camp
-  - To the Westerlands
-  - Lhazareen Village
-  - The Neck
-  - The Twins
-  - The Desert
+  - The Vale_Eastern Road
+  - The Vale_The Eyrie
+  - The North_The Wolfswood
+  - The Crownlands_The Kingswood
+  - The Westerlands_Lannister Camp
+  - The Vale_To the Westerlands
+  - The Dothraki Sea_Lhazareen Village
+  - The North_The Neck
+  - The Riverlands_The Twins
+  - The Red Waste_The Desert
+  - The Riverlands_Lannister Camp
   - The Red Waste
-  - Battlefield
-  - Riverrun
-  - Camp of the North
-  - Craster's Keep
-  - Dragonstone
-  - The Kingsroad
+  - The Riverlands_Battlefield
+  - The Riverlands_Riverrun
+  - The Riverlands_Camp of the North
+  - The North_The Gift
+  - North of the Wall_Craster's Keep
+  - The Crownlands_Dragonstone
+  - The Riverlands_The Kingsroad
   - The Sunset Sea
-  - Lordsport
-  - Pyke
-  - Storm's End
-  - Oxcross
-  - Harrenhal
+  - The Iron Islands_Lordsport
+  - The Iron Islands_Pyke
+  - The Stormlands_Storm's End
+  - The Westerlands_Oxcross
+  - The Riverlands_Harrenhal
   - Qarth
-  - Fist of the First Men
-  - The Woods
-  - Frostfang Mountains
-  - To King's Landing
-  - Blackwater Bay
-  - East to King's Landing
-  - Outside Harrenhal
-  - The Wall
+  - North of the Wall_Fist of the First Men
+  - The Stormlands_The Woods
+  - North of the Wall_Frostfang Mountains
+  - The Westerlands_Camp of the North
+  - The Westerlands_To King's Landing
+  - The Crownlands_Blackwater Bay
+  - The Riverlands_East to King's Landing
+  - The Riverlands_Outside Harrenhal
+  - Qarth_King's Landing
+  - Qarth_The Wall
+  - Qarth_Vaes Dothrak
   - The Summer Sea
-  - Slaver's Bay
+  - Astapor_Slaver's Bay
   - Astapor
-  - The Dreadfort
-  - To Riverrun
-  - Wildlings March South
-  - Nightswatch March South
-  - North to the Red Fork
-  - To Harrenhal
-  - Hollow Hill
-  - Wildling Camp
-  - Cave Outside Wildling Camp
-  - Outside Yunkai
-  - South to the Wall
-  - Top of the Wall
-  - South to King's Landing
-  - Red Fork
-  - Destroyed Cabin
-  - Near Nightfort
-  - To The Twins
+  - The North_The Dreadfort
+  - The Riverlands_To Riverrun
+  - North of the Wall_Wildlings March South
+  - North of the Wall_Nightswatch March South
+  - The Riverlands_North to the Red Fork
+  - The Riverlands_To Harrenhal
+  - The Riverlands_Hollow Hill
+  - North of the Wall_Wildling Camp
+  - North of the Wall_Cave Outside Wildling Camp
+  - Yunkai_Outside Yunkai
+  - North of the Wall_South to the Wall
+  - North of the Wall_The Wall
+  - The Wall_Top of the Wall
+  - The Riverlands_South to King's Landing
+  - The Riverlands_Red Fork
+  - North of the Wall_Destroyed Cabin
+  - North of the Wall_Near Nightfort
+  - The Riverlands_To The Twins
   - Yunkai
-  - Nightfort
-  - Away from the Twins
-  - Outside Meereen
-  - To The Eyrie
-  - Mole's Town
+  - The Wall_Nightfort
+  - The Riverlands_Away from the Twins
+  - Meereen_Outside Meereen
+  - The Riverlands_To The Eyrie
+  - The Wall_Mole's Town
   - Meereen
-  - To The Vale
-  - The Lands of Always Winter
+  - The Vale_To The Vale
+  - North of the Wall_The Lands of Always Winter
   - Braavos
-  - Moat Cailin
-  - Outside Castle Black
-  - Outside the Three-Eyed Raven
-  - The Three-Eyed Raven
-  - Coast of the Vale
-  - Outside Casterly Rock
-  - Runestone
-  - Inn
-  - Outside the Inn
-  - Castle Stokeworth
-  - The Water Gardens
-  - Pentos to Volantis
+  - The North_Moat Cailin
+  - The Wall_Outside Castle Black
+  - North of the Wall_Outside the Three-Eyed Raven
+  - North of the Wall_The Three-Eyed Raven
+  - The Vale_To The Eyrie
+  - The Vale_Coast of the Vale
+  - The Westerlands_Outside Casterly Rock
+  - The Vale_Runestone
+  - The Vale_Inn
+  - The Vale_Outside the Inn
+  - The Crownlands_Castle Stokeworth
+  - Dorne_The Water Gardens
+  - Pentos_Pentos to Volantis
   - Volantis
-  - Tarth
+  - The Stormlands_Tarth
   - Dorne
-  - Volantis to Valyria
-  - Winter Town
+  - Volantis_Volantis to Valyria
+  - The North_Winter Town
   - Valyria
-  - Outside King's Landing
-  - Stannis Baratheon's Camp
-  - Hardhome
-  - To Horn Hill
-  - Tower of Joy
-  - Horn Hill
-  - Village
-  - Bear Island
-  - Deepwood Motte
-  - Forest
-  - Oldtown
+  - Valyria_Slaver's Bay
+  - The Crownlands_Outside King's Landing
+  - The North_Stannis Baratheon's Camp
+  - North of the Wall_Hardhome
+  - The Reach_To Horn Hill
+  - Dorne_Tower of Joy
+  - The Reach_Horn Hill
+  - The Riverlands_Village
+  - The North_Bear Island
+  - The North_Deepwood Motte
+  - The Riverlands_Forest
+  - The Reach_Oldtown
   - The Narrow Sea
-  - Casterly Rock
-  - Highgarden
-  - Blackwater Rush
-  - Eastwatch
+  - The Westerlands_Casterly Rock
+  - The Reach_Highgarden
+  - The Crownlands_Blackwater Rush
+  - The Wall_Eastwatch
   - The Shivering Sea
-  - Last Hearth
-  mapGameObjects:
+  - The North_Last Hearth
+  mapTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

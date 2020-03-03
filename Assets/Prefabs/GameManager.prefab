@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1982890601556179041}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,8 @@ MonoBehaviour:
   slider: {fileID: 0}
   timeLineAsset: {fileID: 11400000, guid: 112bde63854ed3b42842b886e2ab4a58, type: 2}
   mapAsset: {fileID: 11400000, guid: 9fa92002049331a409dd0da11e8faaeb, type: 2}
+  episodesCollection:
+    episodes: []
 --- !u!114 &1982890601556179042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,9 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c72b1e186c8e624ba7f845a016f5ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 2335287247909942653, guid: 22f5260f1fad5914bbe9ca02291fb4ad,
+  characterPrefab: {fileID: 8353678046672732086, guid: 22f5260f1fad5914bbe9ca02291fb4ad,
     type: 3}
   characterCubes: []
+  sceneArray: []
+  timeLineAsset: {fileID: 11400000, guid: 112bde63854ed3b42842b886e2ab4a58, type: 2}
 --- !u!114 &1982890601556179041
 MonoBehaviour:
   m_ObjectHideFlags: 0

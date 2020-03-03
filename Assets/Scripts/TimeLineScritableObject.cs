@@ -19,4 +19,5 @@ public class TimeLineScritableObject : ScriptableObject
     public List<int> season6 = new List<int>();
     public List<int> season7 = new List<int>();
     public List<int> season8 = new List<int>();
+    public Scene[] sceneArray;
 }
