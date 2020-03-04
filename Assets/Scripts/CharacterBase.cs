@@ -11,6 +11,7 @@ public class CharacterBase : MonoBehaviour
     private MapManager mapManager;
     public MapScriptableObject mapAsset;
     public TimeLineScritableObject timeLineAsset;
+    public CharacterDataBaseScriptableObject characterDataBase;
     // Points and Lines
     public GameObject linePrefab;
     private LineRenderer line;
@@ -43,6 +44,13 @@ public class CharacterBase : MonoBehaviour
     void Update()
     {
         UpdatePosition();
+
+        foreach (MeshRenderer mr in gameObject.transform.GetComponentsInChildren<MeshRenderer>())
+        {
+            mr.enabled = info.show;
+        }
+        line.enabled = info.show;
+
     }
 
     void Init()
@@ -73,6 +81,19 @@ public class CharacterBase : MonoBehaviour
         }
         // line
         GameObject go = Instantiate(linePrefab);
+        go.name = info.characterName + " line";
+        if (info.houseName != null && info.houseName != "")
+        {
+            // go.GetComponent<LineRenderer>().material.color = characterDataBase.houseColorList[characterDataBase.houseList.IndexOf(info.houseName)];
+            go.GetComponent<LineRenderer>().startColor = new Color(1, 1, 1, 0);
+            Color c = characterDataBase.houseColorList[characterDataBase.houseList.IndexOf(info.houseName)];
+            go.GetComponent<LineRenderer>().endColor = new Color(c.r, c.g, c.b, 1);;
+        }
+        else
+        {
+            go.GetComponent<LineRenderer>().startColor = new Color(0, 0, 0, 0);
+            go.GetComponent<LineRenderer>().endColor = new Color(Color.gray.r, Color.gray.g, Color.gray.b, 1);
+        }
         line = go.GetComponent<LineRenderer>();
         line.positionCount = 1;
         line.SetPosition(currentPositionIndex, dotList[currentPositionIndex].position);
@@ -92,6 +113,7 @@ public class CharacterBase : MonoBehaviour
                 currentPositionIndex++;
                 startSceneIndex = sceneIndex;
             }
+            if (currentPositionIndex >= line.positionCount) line.positionCount++;
             line.SetPosition(currentPositionIndex, dotList[currentPositionIndex].position);
         }
         else if (currentPositionIndex < dotList.Count - 1)

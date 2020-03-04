@@ -11,7 +11,6 @@ public class TimeLineManager : MonoBehaviour
     public Slider slider;
     private float curSliderValue;
     private bool sliding = false;
-    private Coroutine co;
     private int targetSliderValue = 0;
     public TimeLineScritableObject timeLineAsset;
     public MapScriptableObject mapAsset;
@@ -57,11 +56,16 @@ public class TimeLineManager : MonoBehaviour
 
     public void UpdateUI()
     {
+        if (sliding)
+        {
+            slider.value = curSliderValue;
+            return;
+        }
         slider.value = Mathf.Max(slider.value, curSliderValue);
         curSliderValue = slider.value;
         if (!sliding)
         {
-            co = StartCoroutine(IncreaseSceneIndex((int)slider.value));
+            StartCoroutine(IncreaseSceneIndex((int)slider.value));
         }
         // while (timeLineAsset.currentScene < (int)slider.value) timeLineAsset.currentScene++;
         // EpisodeData epiData = CalculateEpisodeData(timeLineAsset.currentScene);
@@ -234,7 +238,7 @@ public class TimeLineManager : MonoBehaviour
         foreach (GameObject go in characters) Destroy(go);
         GameObject[] lines = GameObject.FindGameObjectsWithTag("Line");
         foreach (GameObject go in lines) Destroy(go);
-        StopCoroutine(co);
+        StopAllCoroutines();
         sliding = false;
         curSliderValue = 0;
     }

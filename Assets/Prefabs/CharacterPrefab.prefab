@@ -53,6 +53,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501661928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
@@ -258,6 +259,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -342,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info:
+    show: 0
     characterName: 
     houseName: 
     characterImageThumb: 
@@ -350,5 +353,6 @@ MonoBehaviour:
   nameText: {fileID: 5788657836863998761}
   mapAsset: {fileID: 11400000, guid: 9fa92002049331a409dd0da11e8faaeb, type: 2}
   timeLineAsset: {fileID: 11400000, guid: 112bde63854ed3b42842b886e2ab4a58, type: 2}
+  characterDataBase: {fileID: 11400000, guid: 7d5bada6fc186f943a90d856124cfdeb, type: 2}
   linePrefab: {fileID: 536371697185811982, guid: 35421994b386f244fafd0cfce2ecbe12,
     type: 3}
