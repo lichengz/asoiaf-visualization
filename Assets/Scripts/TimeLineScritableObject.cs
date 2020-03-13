@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "TimeLineScritableObject", menuName = "asoiaf/TimeLineScritableObject", order = 0)]
 public class TimeLineScritableObject : ScriptableObject
 {
+    public bool paused;
     public bool fileLoaded;
     public int currentSeason;
     public int currentEpisode;
+    public float timer;
     public int currentScene;
     public int totalNumOfScenes;
     public List<int> scenesInEachEpisode;

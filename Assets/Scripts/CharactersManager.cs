@@ -22,7 +22,8 @@ public class CharactersManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Init();
+        //Init();
+        //SpawnAllCharacters();
     }
 
     // Update is called once per frame
@@ -48,29 +49,41 @@ public class CharactersManager : MonoBehaviour
         {
             includeDictionary.Add(include.name, include.include);
         }
-        // foreach (CharacterInfo info in characterInfoCollection.characters)
-        // {
-        //     if (includeDictionary.ContainsKey(info.characterName) && includeDictionary[info.characterName])
-        //     {
-                // if (!characterSet.Contains(info.characterName))
-                // {
-                //     characterSet.Add(info.characterName);
+
+
+        // ---------------
+        foreach (CharacterInfo info in characterInfoCollection.characters)
+        {
+            if (includeDictionary.ContainsKey(info.characterName) && includeDictionary[info.characterName])
+            {
+                if (!characterSet.Contains(info.characterName))
+                {
+                    characterSet.Add(info.characterName);
                     //meta data
                     // characterDataBase.characterNameList.Add(info.characterName);
-                    //characterDataBase.characterInfoList.Add(info);
+                    characterDataBase.characterInfoList.Add(info);
                     // if (!characterDataBase.houseList.Contains(info.houseName) && info.houseName != "" && info.houseName != null)
                     // {
                     //     characterDataBase.houseList.Add(info.houseName);
                     // }
-                // }
-        //     }
-        // }
+                }
+            }
+        }
+    }
+
+    void SpawnAllCharacters()
+    {
+        foreach (CharacterInfo info in characterDataBase.characterInfoList)
+        {
+            GameObject go = Instantiate(characterPrefab);
+            go.GetComponent<CharacterBase>().info = info;
+        }
     }
 
     void SpawnCharacter(Character character)
     {
         // if (!characterDictionary.ContainsKey(character.name)) return;
-        if(!characterDataBase.characterNameList.Contains(character.name)) return;
+        if (!characterDataBase.characterNameList.Contains(character.name)) return;
         GameObject go = Instantiate(characterPrefab);
         int characterIndex = characterDataBase.characterNameList.IndexOf(character.name);
         go.GetComponent<CharacterBase>().info = characterDataBase.characterInfoList[characterIndex];
@@ -87,11 +100,17 @@ public class CharacterInfoCollection
 public class CharacterInfo
 {
     public bool show;
+    public bool selected;
     public string characterName;
     public string houseName;
     public string characterImageThumb;
     public string characterImageFull;
-    public string killedBy;
+    public string[] killedBy;
+}
+[Serializable]
+public class killer
+{
+    public string[] name;
 }
 
 [Serializable]

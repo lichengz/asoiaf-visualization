@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour
     /*
      * Camera logic on LateUpdate to only update after all character movement logic has been handled. 
      */
-    void LateUpdate()
+    void Update()
     {
         // If Control and Alt and Middle button? ZOOM!
         if (Input.GetMouseButton(2) && Input.GetKey(KeyCode.LeftAlt) && Input.GetKey(KeyCode.LeftControl))

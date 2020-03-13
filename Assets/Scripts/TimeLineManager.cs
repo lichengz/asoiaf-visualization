@@ -4,10 +4,11 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class TimeLineManager : MonoBehaviour
 {
-    public Text expisodeCounter;
+    public TextMeshProUGUI expisodeCounter;
     public Slider slider;
     private float curSliderValue;
     private bool sliding = false;
@@ -22,12 +23,27 @@ public class TimeLineManager : MonoBehaviour
     void Start()
     {
         Init();
+        // GetScenes();
     }
 
     // Update is called once per frame
     void Update()
     {
         KeyInputHandler();
+
+        if (!sliding && !timeLineAsset.paused && timeLineAsset.currentScene < (int)slider.value)
+        {
+            timeLineAsset.timer = timeLineAsset.timer + 10f * Time.deltaTime;
+            timeLineAsset.currentScene = (int)timeLineAsset.timer;
+            EpisodeData epiData = CalculateEpisodeData(timeLineAsset.currentScene);
+            timeLineAsset.currentSeason = epiData.seasonIndex;
+            timeLineAsset.currentEpisode = epiData.episodeIndex;
+            expisodeCounter.text = String.Format("Season {0}, Episode {1}, Scene {2}/{3}", epiData.seasonIndex + 1, epiData.episodeIndex + 1, CalculateSceneProgrerss(timeLineAsset.currentScene) + 1, timeLineAsset.scenesInEachEpisode[CalculateEpiIndex(timeLineAsset.currentScene)]);
+            // if (timeLineAsset.currentScene == (int)slider.value)
+            // {
+            //     sliding = true;
+            // }
+        }
     }
 
     void OnApplicationQuit()
@@ -38,9 +54,9 @@ public class TimeLineManager : MonoBehaviour
     private void Init()
     {
         charactersManager = gameObject.GetComponent<CharactersManager>();
-        string file = File.ReadAllText(Application.dataPath + "/Data/episodes.json");
-        episodesCollection = JsonUtility.FromJson<EpisodesCollection>(file);
-        UpdateTimeLineAsset();
+        // string file = File.ReadAllText(Application.dataPath + "/Data/episodes.json");
+        // episodesCollection = JsonUtility.FromJson<EpisodesCollection>(file);
+        // UpdateTimeLineAsset();
         slider.maxValue = timeLineAsset.totalNumOfScenes - 1;
         seasons[0] = timeLineAsset.season1;
         seasons[1] = timeLineAsset.season2;
@@ -50,7 +66,8 @@ public class TimeLineManager : MonoBehaviour
         seasons[5] = timeLineAsset.season6;
         seasons[6] = timeLineAsset.season7;
         seasons[7] = timeLineAsset.season8;
-        timeLineAsset.currentScene = (int)slider.value;
+        timeLineAsset.currentScene = 0;
+        timeLineAsset.timer = 0;
         UpdateUI();
     }
 
@@ -63,15 +80,10 @@ public class TimeLineManager : MonoBehaviour
         }
         slider.value = Mathf.Max(slider.value, curSliderValue);
         curSliderValue = slider.value;
-        if (!sliding)
-        {
-            StartCoroutine(IncreaseSceneIndex((int)slider.value));
-        }
-        // while (timeLineAsset.currentScene < (int)slider.value) timeLineAsset.currentScene++;
-        // EpisodeData epiData = CalculateEpisodeData(timeLineAsset.currentScene);
-        // timeLineAsset.currentSeason = epiData.seasonIndex;
-        // timeLineAsset.currentEpisode = epiData.episodeIndex;
-        // expisodeCounter.text = String.Format("Season {0}, Episode {1}, Scene {2}/{3}", epiData.seasonIndex + 1, epiData.episodeIndex + 1, CalculateSceneProgrerss(timeLineAsset.currentScene) + 1, timeLineAsset.scenesInEachEpisode[CalculateEpiIndex(timeLineAsset.currentScene)]);
+        // if (!sliding)
+        // {
+        //     StartCoroutine(IncreaseSceneIndex((int)slider.value));
+        // }
     }
     private IEnumerator IncreaseSceneIndex(int value)
     {
@@ -79,12 +91,20 @@ public class TimeLineManager : MonoBehaviour
         targetSliderValue = value;
         while (timeLineAsset.currentScene != value)
         {
-            yield return new WaitForSeconds(0.01f);
-            timeLineAsset.currentScene++;
-            EpisodeData epiData = CalculateEpisodeData(timeLineAsset.currentScene);
-            timeLineAsset.currentSeason = epiData.seasonIndex;
-            timeLineAsset.currentEpisode = epiData.episodeIndex;
-            expisodeCounter.text = String.Format("Season {0}, Episode {1}, Scene {2}/{3}", epiData.seasonIndex + 1, epiData.episodeIndex + 1, CalculateSceneProgrerss(timeLineAsset.currentScene) + 1, timeLineAsset.scenesInEachEpisode[CalculateEpiIndex(timeLineAsset.currentScene)]);
+            //Debug.Log(timeLineAsset.paused);
+            if (!timeLineAsset.paused)
+            {
+                timeLineAsset.currentScene++;
+                EpisodeData epiData = CalculateEpisodeData(timeLineAsset.currentScene);
+                timeLineAsset.currentSeason = epiData.seasonIndex;
+                timeLineAsset.currentEpisode = epiData.episodeIndex;
+                expisodeCounter.text = String.Format("Season {0}, Episode {1}, Scene {2}/{3}", epiData.seasonIndex + 1, epiData.episodeIndex + 1, CalculateSceneProgrerss(timeLineAsset.currentScene) + 1, timeLineAsset.scenesInEachEpisode[CalculateEpiIndex(timeLineAsset.currentScene)]);
+                yield return new WaitForSeconds(0.01f);
+            }
+            else
+            {
+                yield return null;
+            }
         }
         sliding = false;
     }
@@ -233,6 +253,7 @@ public class TimeLineManager : MonoBehaviour
     void ResetAll()
     {
         timeLineAsset.currentScene = 0;
+        timeLineAsset.timer = 0;
         slider.value = 0;
         GameObject[] characters = GameObject.FindGameObjectsWithTag("Character");
         foreach (GameObject go in characters) Destroy(go);
@@ -289,4 +310,7 @@ public class Scene
 public class Character
 {
     public string name;
+    public string alive;
+    public string mannerOfDeath;
+    public string[] killedBy;
 }
